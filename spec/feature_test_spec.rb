@@ -10,11 +10,12 @@ feature 'See links' do
 
   scenario 'on the home page' do
     Bookmark.create(:name => 'CNN News', :address => 'http://www.cnn.com')
-    visit '/'
-
+    Bookmark.create(:name => 'Makers Academy', :address => 'http://www.makersacademy.com')
+    visit '/links'
     within 'ul#links' do
       expect(page).to have_link 'BBC News'
-    end    
+      expect(page).to have_link 'Makers Academy'
+    end
   end
 
 end
