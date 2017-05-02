@@ -1,20 +1,19 @@
 require './models/bookmark.rb'
-require "data_mapper"
-require "dm-postgres-adapter"
-require "dm-migrations"
-
-# DataMapper.finalize
-# DataMapper.auto_upgrade!
+require 'database_cleaner'
 
 feature 'See links' do
 
   scenario 'on the home page' do
+
+    DatabaseCleaner.start
+
     Bookmark.create(:name => 'CNN News', :address => 'http://www.cnn.com')
-    Bookmark.create(:name => 'Makers Academy', :address => 'http://www.makersacademy.com')
     visit '/links'
     within 'ul#links' do
-      expect(page).to have_link 'BBC News'
-      expect(page).to have_link 'Makers Academy'
+    expect(page).to have_link 'CNN News'
+
+    DatabaseCleaner.clean
+
     end
   end
 
