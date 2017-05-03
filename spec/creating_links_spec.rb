@@ -1,5 +1,5 @@
-require 'database_cleaner'
 DataMapper.setup(:default, 'postgres://localhost/bookmark_manager_test')
+
 feature 'Create links' do
 
   scenario 'on the links page ' do
