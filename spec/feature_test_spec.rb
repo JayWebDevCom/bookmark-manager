@@ -1,6 +1,6 @@
 require './models/bookmark.rb'
 require 'database_cleaner'
-
+DataMapper.setup(:default, 'postgres://localhost/bookmark_manager_test')
 feature 'See links' do
 
   scenario 'on the home page' do
