@@ -1,6 +1,4 @@
 require "data_mapper"
-# require "dm-postgres-adapter"
-# require "dm-migrations"
 
 class Bookmark
 

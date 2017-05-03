@@ -1,16 +1,15 @@
 source "https://rubygems.org"
 
-group :test do
-  gem "database_cleaner"
-end
+ruby '2.4.1'
 
-group :test, :development do
-  gem "capybara"
-  gem "data_mapper"
-  gem "dm-migrations"
-  gem "dm-postgres-adapter"
-  gem "database_cleaner"
-  gem "rake"
-  gem "rspec"
-  gem "sinatra"
+gem 'sinatra'
+gem 'data_mapper'
+gem 'dm-postgres-adapter'
+gem 'rake'
+gem 'database_cleaner'
+gem 'bootstrap'
+
+group :test do
+  gem 'capybara'
+  gem 'rspec'
 end
