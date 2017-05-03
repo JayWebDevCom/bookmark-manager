@@ -26,5 +26,4 @@ class BookmarkManager < Sinatra::Application
     redirect '/links'
   end
 
-
 end
