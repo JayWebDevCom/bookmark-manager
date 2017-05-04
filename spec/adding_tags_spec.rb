@@ -1,10 +1,6 @@
-DataMapper.setup(:default, 'postgres://localhost/bookmark_manager_test')
-
 feature 'Add tags' do
 
   scenario 'on the new page' do
-
-    DatabaseCleaner.start
 
     visit '/links/new'
     expect(page).to have_content 'Add A Link'
@@ -19,8 +15,6 @@ feature 'Add tags' do
     expect(page).to have_link 'CNN News'
     click_link 'CNN News'
     expect(page.status_code).to eq 200
-
-    DatabaseCleaner.clean
 
   end
 
