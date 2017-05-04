@@ -24,7 +24,7 @@ class BookmarkManager < Sinatra::Application
 
   post '/links' do
     bookmark = Bookmark.create(:name => params[:name], :address => params[:address])
-      params[:tags].split.each { |tag|
+      params[:tags].split(' ').each { |tag|
         bookmark.tags << Tag.first_or_create(name: tag)
       }
     bookmark.save
@@ -36,6 +36,5 @@ class BookmarkManager < Sinatra::Application
     @bookmarks = tag ? tag.bookmarks : []
     erb :'links/index'
   end
-
 
 end
