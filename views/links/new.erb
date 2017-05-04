@@ -1,21 +1,23 @@
 <h1> Add A Link </h1>
 
+<div class="input-group">
 <form action="/links" method="post">
 
-  <label for="name">Name
+  <label for="name">Name</label>
   <input type="text" name="name" id="name">
-  </label>
 
-  <label for="address">Address
-  <input type="text" name="address" id="address">
-  </label>
 
-  <label for="tags">Tags
-  <input type="text" name="tags" id="tag">
-  </label>
+  <label for="address">Address</label>
+  <input type="text" name="address" id="address" class="form-control">
 
-  <input type="submit" value="Save Link!">
+
+  <label for="tags">Tags</label>
+  <input type="text" name="tags" id="tag" class="form-control">
+  <br>
+
+  <input type="submit" value="Save Link!" class="btn btn-primary">
 
 </form>
+</div>
 
-<a href="links">Links</a>
+<a href="/links">Links</a>
