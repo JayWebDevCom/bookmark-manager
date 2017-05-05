@@ -3,7 +3,19 @@ ENV["RACK_ENV"] = "test"
 require 'capybara/rspec'
 require 'database_cleaner'
 require_relative '../app'
+
+require 'simplecov'
+require 'simplecov-console'
+
+
 Capybara.app = BookmarkManager
+
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
+  SimpleCov::Formatter::Console,
+  # Want a nice code coverage website? Uncomment this next line!
+  # SimpleCov::Formatter::HTMLFormatter
+])
+SimpleCov.start
 
 DataMapper.setup(:default, 'postgres://localhost/bookmark_manager_#{ENV["RACK_ENV"]}')
 
