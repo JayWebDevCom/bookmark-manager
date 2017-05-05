@@ -42,7 +42,14 @@
 
  <div class="container-fluid" style="margin-top: 70px; margin-left: 40px; margin-right: 40px">
     <header class="jumbotron subhead" id="overview">
+
       <div class="row">
+        <% if current_user %>
+          <p>Welcome <%= current_user.email %></p>
+        <% end %>
+      </div>
+
+        <div class="row">
         <div>
           <%= yield %>
         </div>
