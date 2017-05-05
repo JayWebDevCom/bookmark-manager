@@ -1,4 +1,4 @@
-ENV['RACK_ENV'] ||= 'test'
+ENV['RACK_ENV'] ||= 'development'
 
 require 'sinatra/bootstrap'
 require 'data_mapper'
