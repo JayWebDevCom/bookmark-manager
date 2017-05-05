@@ -1,3 +1,5 @@
+ENV['RACK_ENV'] ||= 'test'
+
 require 'sinatra/bootstrap'
 require 'data_mapper'
 require 'dm-postgres-adapter'
