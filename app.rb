@@ -5,19 +5,27 @@ class BookmarkManager < Sinatra::Application
 
   enable :sessions
   set :session_secret, 'super_secret'
+  register Sinatra::Flash
 
   def get_all_bookmarks
     @bookmarks = Bookmark.all
   end
 
   get "/users/new" do
+    @user = User.new
     erb :'users/new'
   end
 
   post "/users" do
-    user = User.create(email: params[:email], password: params[:password], password_confirmation: params[:checkpassword])
-    session[:user_id] = user.id
-    redirect "/links"
+    @user = User.create(email: params[:email], password: params[:password], password_confirmation: params[:checkpassword])
+
+    if @user.save
+      session[:user_id] = @user.id
+      redirect "/"
+    else
+      flash.now[:this_error] = 'Your Passwords do not match'
+      erb :'users/new'
+    end
   end
 
   get '/' do

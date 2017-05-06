@@ -121,6 +121,8 @@ GEM
     sinatra-bootstrap (0.6.1)
       sinatra (>= 1.0)
       sinatra-outputbuffer
+    sinatra-flash (0.3.0)
+      sinatra (>= 1.0.0)
     sinatra-outputbuffer (0.1.0)
       sinatra (>= 1.0.a)
     stringex (1.5.1)
@@ -146,6 +148,7 @@ DEPENDENCIES
   simplecov-console
   sinatra
   sinatra-bootstrap
+  sinatra-flash
 
 RUBY VERSION
    ruby 2.4.1p111

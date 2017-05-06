@@ -9,7 +9,6 @@ feature 'Viewing links' do
 
   scenario 'I can filter links by tag' do
     visit '/tags/bubbles'
-
     expect(page.status_code).to eq(200)
     within 'ul#links' do
       expect(page).not_to have_content('Makers Academy')

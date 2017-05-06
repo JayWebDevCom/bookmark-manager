@@ -10,10 +10,11 @@ require_relative 'models/bookmark'
 require_relative 'models/tag'
 require_relative 'models/user'
 
+require 'sinatra/flash'
+
 DataMapper.setup(:default, ENV['DATABASE_URL'] || "postgres://localhost/bookmark_manager_#{ENV['RACK_ENV']}")
 DataMapper.finalize
 DataMapper.auto_upgrade!
-
 
   def login?
     if session[:user_id].nil?

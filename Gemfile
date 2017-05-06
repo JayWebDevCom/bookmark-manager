@@ -10,6 +10,7 @@ gem 'dm-postgres-adapter'
 gem 'haml'
 gem 'sinatra'
 gem 'sinatra-bootstrap', :require => 'sinatra/bootstrap'
+gem 'sinatra-flash'
 
 
 group :test do

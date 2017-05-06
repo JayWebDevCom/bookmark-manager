@@ -44,9 +44,14 @@
     <header class="jumbotron subhead" id="overview">
 
       <div class="row">
+
         <% if current_user %>
           <p><%= "Welcome #{current_user.email}" %></p>
         <% end %>
+        <% if flash[:this_error] %>
+        <div id='notice'><%= flash[:this_error] %></div>
+        <% end %>
+
       </div>
 
         <div class="row">
