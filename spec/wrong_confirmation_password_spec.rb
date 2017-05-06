@@ -13,7 +13,7 @@ feature 'Users' do
         fill_in 'checkpassword', with: password_2
         click_button 'Sign Up!'
         expect(page).to have_current_path ('/users')
-        expect(page).to have_content 'Your Passwords do not match'
+        expect(page).to have_content 'Password does not match the confirmation'
         expect(page).not_to have_content "Welcome #{email}"
       }.to_not change { User.count }
 

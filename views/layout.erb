@@ -48,9 +48,16 @@
         <% if current_user %>
           <p><%= "Welcome #{current_user.email}" %></p>
         <% end %>
-        <% if flash[:this_error] %>
-        <div id='notice'><%= flash[:this_error] %></div>
+
+        <% if flash[:errors] && !flash[:errors].empty? %>
+        Please refer to the following errors below:
+        <ul id='errors'>
+        <% flash[:errors].each do |error| %>
+        <li><%= error %></li>
         <% end %>
+        </ul>
+        <% end %>
+
 
       </div>
 

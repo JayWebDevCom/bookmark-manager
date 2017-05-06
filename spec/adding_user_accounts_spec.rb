@@ -5,6 +5,7 @@ feature 'Users' do
       password = 'secret*123'
       visit '/'
       click_link 'Sign Up now...'
+
       expect {
         fill_in 'email', with: email
         fill_in 'password', with: password
@@ -12,7 +13,6 @@ feature 'Users' do
         click_button 'Sign Up!'
         expect(page).to have_content "Welcome #{email}"
       }.to change { User.count }.by(+1)
-
 
     end
 
