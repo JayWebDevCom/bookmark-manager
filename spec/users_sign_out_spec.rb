@@ -20,7 +20,7 @@ feature 'User sign out' do
 
     scenario 'when not signed in' do
       visit '/'
-      expect(page).not_to have_link 'Sign Out Now!'
+      expect(page).not_to have_button 'Sign Out Now!'
     end
 
 end
