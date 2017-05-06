@@ -178,6 +178,34 @@
         null,
         null
       ],
+      "/Users/Jaiye/Documents/Sites/Ruby/precourse/Projects/bookmark-manager/spec/users_sign_out_spec.rb": [
+        1,
+        null,
+        1,
+        2,
+        2,
+        2,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
       "/Users/Jaiye/Documents/Sites/Ruby/precourse/Projects/bookmark-manager/spec/viewing_links_spec.rb": [
         1,
         null,
@@ -225,6 +253,6 @@
         null
       ]
     },
-    "timestamp": 1494089996
+    "timestamp": 1494091195
   }
 }

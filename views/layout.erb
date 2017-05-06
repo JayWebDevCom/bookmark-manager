@@ -46,7 +46,17 @@
       <div class="row">
 
         <% if current_user %>
-          <p><%= "Welcome #{current_user.email}" %></p>
+        Welcome <%= current_user.email %>
+        <form method='post' action='/sessions'>
+        <input type='hidden' name='_method' value='delete'>
+        <input type='submit' value='Sign Out Now!'>
+        </form>
+        <% end %>
+
+        <% if flash[:notice] %>
+        <div id='notice'>
+        <%= flash[:notice] %>
+        </div>
         <% end %>
 
         <% if flash[:errors] && !flash[:errors].empty? %>
