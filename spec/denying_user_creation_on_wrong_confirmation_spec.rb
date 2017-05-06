@@ -15,7 +15,7 @@ feature 'Users' do
         expect(page).to have_current_path ('/users')
         expect(page).to have_content 'Your Passwords do not match'
         expect(page).not_to have_content "Welcome #{email}"
-      }.to_not change{User.count}
+      }.to_not change { User.count }
 
     end
 

@@ -1,19 +1,15 @@
-feature 'Users' do
+feature 'Signing up' do
 
-  scenario 'log in and are redirected' do
-      email = 'user@example.com'
+  scenario 'impossible with a blank email address' do
       password = 'secret*123'
       visit '/'
       click_link 'Sign Up now...'
       expect {
-        fill_in 'email', with: email
+        fill_in 'email', with: ''
         fill_in 'password', with: password
         fill_in 'checkpassword', with: password
         click_button 'Sign Up!'
-        expect(page).to have_content "Welcome #{email}"
-      }.to change { User.count }.by(+1)
-
-
+      }.not_to change { User.count }
     end
 
 end

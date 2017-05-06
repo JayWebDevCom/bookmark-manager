@@ -1,7 +1,7 @@
 
 <form action="/users" method="post">
   <label>Email</label>
-  <input type="text" name="email" value="<%= @user.email %>">
+  <input type="email" name="email" value="<%= @user.email %>" required placeholder="Enter a valid email address">
   <label for="">Password</label>
   <input type="password" name="password" value="">
   <label for="">Confirm Password</label>
